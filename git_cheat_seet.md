@@ -1,4 +1,4 @@
-### Do not forget to add the following files:
+## Do not forget to add the following files:
 
 * CONTRIBUTING.md
 * README.md
@@ -10,13 +10,14 @@
 
 Pre commit, changes:
 * `git status` -> show the status of files for commit (working dir OR staged files)
-* `git diff` -> the difference between working dir and the staged area
+* `git diff` -> the difference between working dir and last commit (?).
 * `git diff --staged` -> the difference between staged and last commit
 * `git log` -> show the commits of the repo in descending chronological order. Options:
     * `-n` show `n` previous commits. 
     * `--patch` show the differences *in relation* to previous commit.
     * `--stat` show only the modifications in number of lines. 
     * `--no-merge` does **not** show the merge commits.
+    * `--decorate` -> show the `HEAD` pointer.
 
 <br />
 
@@ -45,11 +46,16 @@ Other:
 * `git remote remove <remote>` -> lose track and erase remote repo reference. 
 * `git push origin <tag_name>` -> push the tag attached to a commit also to remote repo.
 
-### Observations:
+### Branching
+
+`git branch <branch_name>` -> **create** a new branch, however does **not** change to it. This creates a new pointer to the commit you are currently on.
+`git checkout <branch_name>` -> switch to an existing branch.
+
+## Observations:
 
 * If you use `git diff`, but you have already staged all the files, you get no output.
 * `git mv` is a substitute for bash `mv` and it is faster.
-* Puting a string after the `git clone http://path_to_remote_repo` copies the repository to a new directory with the name of the string.
-
+* Puting a string after the `git clone http://path_to_remote_repo <name_dir>` copies the repository to a new directory with the name of the string.
+* The `HEAD` pointer points to the branch you are currently on.
 
 
