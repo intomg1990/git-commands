@@ -1,4 +1,4 @@
-### Do not forget to add the following files:
+## Do not forget to add the following files:
 
 * CONTRIBUTING.md
 * README.md
@@ -17,6 +17,7 @@ Pre commit, changes:
     * `--patch` show the differences *in relation* to previous commit.
     * `--stat` show only the modifications in number of lines. 
     * `--no-merge` does **not** show the merge commits.
+    * `--oneline --decorate --graph -all` try to draw some schematics of branching.
 
 <br />
 
@@ -35,6 +36,10 @@ Dealing with commits:
 Other:
 * `git config --global alias.<new_comand> '<old_command>'` -> create an alias to an **git** command.
 
+### Branching
+
+* `git switch <branch_name>` -> switch to pre existing branch (newer version of `git checkout`).
+
 ### Dealing with remote
 
 * `git remote add <name> <URL>` -> add remote repo from URL and name it.
@@ -45,7 +50,7 @@ Other:
 * `git remote remove <remote>` -> lose track and erase remote repo reference. 
 * `git push origin <tag_name>` -> push the tag attached to a commit also to remote repo.
 
-### Observations:
+## Observations:
 
 * If you use `git diff`, but you have already staged all the files, you get no output.
 * `git mv` is a substitute for bash `mv` and it is faster.
