@@ -17,7 +17,7 @@ Pre commit, changes:
     * `--patch` show the differences *in relation* to previous commit.
     * `--stat` show only the modifications in number of lines. 
     * `--no-merge` does **not** show the merge commits.
-    * `--oneline --decorate --graph -all` try to draw some schematics of branching.
+    * `--oneline --decorate --graph --all` try to draw some schematics of branching.
     * `--decorate` -> show the `HEAD` pointer.
 
 <br />
@@ -42,6 +42,13 @@ Other:
 * `git switch <branch_name>` -> switch to pre existing branch (newer version of `git checkout`).
 * `git branch <branch_name>` -> **create** a new branch, however does **not** change to it. This creates a new pointer to the commit you are currently on.
 * `git checkout <branch_name>` -> switch to an existing branch.
+* `git branch` -> list branches of repo.
+* `git branch -v` -> as above, adding message of last commit.
+* `git branch -all` -> list all branches, including remote repo branches.
+* Renaming branch:
+    * `git branch --move <old_name> <new_name>` -> rename the name of the branch **locally**.
+    * `git push --set-upstream <name_remote_repo> <new_name>` -> push new renamed branch to remote. 
+    * `git push origin --delete <old-name>` -> remove branch `<old_name>` from remote repo. 
 
 ### Dealing with remote
 
@@ -51,7 +58,7 @@ Other:
 * `git pull` -> as above but merge into local branch. 
 * `git remote rename <old_name> <new_name>` -> rename the remote repo.
 * `git remote remove <remote>` -> lose track and erase remote repo reference. 
-* `git push origin <tag_name>` -> push the tag attached to a commit also to remote repo.
+* `git push <remote_name> <tag_name>` -> push the tag attached to a commit also to remote repo.
 
 ## Observations:
 
