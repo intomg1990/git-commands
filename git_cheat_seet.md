@@ -55,10 +55,14 @@ Other:
 * `git remote add <name> <URL>` -> add remote repo from URL and name it.
 * `git remote -v` -> list the name of remote repos followed by their adress.
 * `git fetch <remote>` -> download all the data from the remote repo, however it does **not** merge you main branch with remote main branch.
-* `git pull` -> as above but merge into local branch. 
+* `git checkout --track <remote_repo>/<remote_branch>` -> download a remote repo branch and keep track of it.
 * `git remote rename <old_name> <new_name>` -> rename the remote repo.
 * `git remote remove <remote>` -> lose track and erase remote repo reference. 
 * `git push <remote_name> <tag_name>` -> push the tag attached to a commit also to remote repo.
+* `git push <remote_name> <branch_name>` -> push *only* the `<branch_name>` branch to the remote.
+* `git push <remote_name> --all` -> push all branches to remote.
+* `git push <remote_name> --mirror` -> push all branches and tags to remote.
+
 
 ## Observations:
 
@@ -66,5 +70,5 @@ Other:
 * `git mv` is a substitute for bash `mv` and it is faster.
 * Puting a string after the `git clone http://path_to_remote_repo <name_dir>` copies the repository to a new directory with the name of the string.
 * The `HEAD` pointer points to the branch you are currently on.
-
+ 
 
