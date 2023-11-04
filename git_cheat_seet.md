@@ -45,6 +45,8 @@ Other:
 * `git branch` -> list branches of repo.
 * `git branch -v` -> as above, adding message of last commit.
 * `git branch -all` -> list all branches, including remote repo branches.
+* `git merge <branch_name>` -> merge `<branch_name>` into the current branch.
+* `git rebase <branch_name>` -> put current branch onto `<branch_name>`.
 * Renaming branch:
     * `git branch --move <old_name> <new_name>` -> rename the name of the branch **locally**.
     * `git push --set-upstream <name_remote_repo> <new_name>` -> push new renamed branch to remote. 
@@ -54,8 +56,9 @@ Other:
 
 * `git remote add <name> <URL>` -> add remote repo from URL and name it.
 * `git remote -v` -> list the name of remote repos followed by their adress.
-* `git fetch <remote>` -> download all the data from the remote repo, however it does **not** merge you main branch with remote main branch.
+* `git fetch <remote>` -> download all the data from the remote repo, however it does **not** merge your branch with remote branch.
 * `git checkout --track <remote_repo>/<remote_branch>` -> download a remote repo branch and keep track of it.
+* `git branch -u <remote>/<branch>` -> set the current branch to track the `<remote>/<branch>` of remote repo.
 * `git remote rename <old_name> <new_name>` -> rename the remote repo.
 * `git remote remove <remote>` -> lose track and erase remote repo reference. 
 * `git push <remote_name> <tag_name>` -> push the tag attached to a commit also to remote repo.
@@ -70,5 +73,7 @@ Other:
 * `git mv` is a substitute for bash `mv` and it is faster.
 * Puting a string after the `git clone http://path_to_remote_repo <name_dir>` copies the repository to a new directory with the name of the string.
 * The `HEAD` pointer points to the branch you are currently on.
- 
+* There are the following *subtle* differences in git to pay attention to:
+    * The difference between `git pull` e `git fetch` is that `git pull` try to merge into the local repo the new commits related to the remote repo. It is usually *safer* to use `git fetch`.
+    * The difference between `git merge` and `git rebase` is that only in how the resultint history of commits are done. `git rebase` makes it looks like it was a linear development history. The merge process you merge a different branch in the current branch you are on. The rebase process you rebase from a current branch to a target branch.
 
